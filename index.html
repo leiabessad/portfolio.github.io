@@ -1,108 +1,54 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio - Bureau</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div id="desktop">
-        <img src="photo/fondecran.png" id="background" alt="Fond d'écran">
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Hanken+Grotesk:wght@300;400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/style.css">
+  <script>try{if(!sessionStorage.getItem("intro")&&!matchMedia("(prefers-reduced-motion:reduce)").matches)document.documentElement.classList.add("intro")}catch(e){}</script>
+  <title>Portfolio de Leïa Bessad</title>
+  <meta name="description" content="Portfolio de direction artistique, graphisme et 3D pour le luxe."></head>
+<body data-page="home" id="top">
+<main style="padding:0">
 
-        <div class="icon" data-project="project1">
-            <img src="photo/vignette.png" alt="Icon 1">
-            <div class="hover-image">
-                <img src="photo/miniature-project1.png" alt="Hover Icon 1">
-            </div>
-            <p>Mon projet 1</p>
-        </div>
+<!-- ===== INTRO : les images défilent, puis la page monte =====
+ - data-duree : temps d'affichage de chaque image, en millisecondes (1300 = 1,3 seconde)
+ - Les images viennent automatiquement des vignettes de ta grille ci-dessous. Rien d'autre à régler. -->
+<section class="hero">
+<h1 class="sr">Leïa Bessad, directrice artistique junior</h1>
+<div class="stage"><div class="flash" id="flash" data-duree="450" aria-hidden="true"></div></div>
+<div class="foot fade" id="hfoot"><a href="#travaux" data-scramble></a></div>
+</section>
+
+<!-- ===== GRILLE DES PROJETS =====
+ Pour AJOUTER un projet : copie un bloc <a class="card"> ... </a> entier, colle-le à la suite, puis change :
+   - href : le nom de la page du projet (duplique projet-modele.html et renomme-la)
+   - --a / --b : deux couleurs du dégradé affiché tant que l'image n'est pas ajoutée
+   - src : ton image de vignette (dépose-la dans le dossier assets/)
+   - alt et le texte entre <h3> : le nom du projet
+   - le texte entre <span> : catégorie et année
+ Pour SUPPRIMER un projet : supprime le bloc entier. L'ordre des blocs = l'ordre d'affichage. -->
+<section class="work" id="travaux">
+<a class="card" href="projet-eclose.html">
+<div class="media reveal" ><img src="photos/eclose/vignette2.gif" alt="Maison Aurelle" loading="lazy" onerror="this.remove()"></div>
+<div class="meta"><h3 data-scramble>Éclose</h3><span>Direction artistique, photographie, montage</span></div>
+</a>
+<a class="card" href="projet-fenty.html" > <!-- data-cursor="Voir"> -->
+<div class="media reveal" ><img src="photos/fenty/liquid1.png" alt="Noir Cristal" loading="lazy" onerror="this.remove()"></div>
+<div class="meta"><h3 data-scramble>Fenty Skin</h3><span>Direction artistique, 3D, retouches</span></div>
+</a>
+<a class="card" href="projet-sacs.html" >
+<div class="media reveal" ><img src="photos/bag/femmes.png" alt="Atelier Vesper" loading="lazy" onerror="this.remove()"></div>
+<div class="meta"><h3 data-scramble>Que portent les femmes&nbsp?</h3><span>Direction artistique, photographie</span></div>
+</a>
+<a class="card" href="projet-yena.html">
+  <div class="media reveal" ><img src="photos/yena/yena3.png" alt="Maison Aurelle" loading="lazy" onerror="this.remove()"></div>
+  <div class="meta"><h3 data-scramble>Yena Jewerly</h3><span>Photographie, direction artistique</span></div>
+  </a>
+  
+  <a class="card" href="projet-martine.html" >
+    <div class="media reveal" ><img src="photos/martine/hotgloss14.png" alt="Atelier Vesper" loading="lazy" onerror="this.remove()"></div>
+    <div class="meta"><h3 data-scramble>Martine Cosmetics</h3><span>Direction artistique, 3D, retouche</span></div>
+    </a>
+</section>
+</main>
+<script src="js/main.js"></script>
 
 
-        <div class="icon" data-project="project1">
-            <img src="photo/vignette.png" alt="Vignette 1">
-            <div class="hover-image">
-                <img src="photo/miniature-project1.png" alt="Miniature de projet">
-            </div>
-            <p>Easy Love Story</p>
-        </div>
-
-        <div class="icon" data-project="project2">
-            <img src="photo/vignette.png" alt="Vignette 2">
-            <div class="hover-image">
-                <img src="photo/miniature-project2.jpg" alt="Miniature de projet">
-            </div>
-            <p>Ain't Your "Mayo"</p>
-        </div>
-
-      
-
-        <div class="icon" data-project="project3">
-            <img src="photo/vignette.png" alt="Vignette 3">
-            <div class="hover-image">
-                <img src="photo/miniature-project3.jpg" alt="Miniature de projet">
-            </div>
-            <p>Steinkrebse</p>
-        </div>
-
-        <div class="icon" id="corbeille">
-            <img src="photo/corbeille.png" alt="Corbeille">
-            <p>Corbeille</p>
-        </div>
-
-
-        <div id="invariant-container">
-            <div class="Invariant">
-                <img src="photo/contact.png" alt="Contact">
-                <p>Contactez-moi</p>
-            </div>
-        
-            <div class="Invariant">
-                <img src="photo/music.png" alt="Playlist">
-                <p>Playlist</p>
-            </div>
-        </div>
-
-    <!-- Fenêtre modale (apparaît quand on double-clique sur une vignette) -->
-        <div id="modal" class="hidden">
-            <div class="modal-content">
-                <span id="close">&times;</span>
-                <div id="modal-images">
-                    <!-- Les images du projet vont ici -->
-                </div>
-                <div id="modal-description">
-                    <!-- Texte du projet ici -->
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 
-        <span id="close" class="close-btn">&times;</span>
-        </div>
-    Bouton de fermeture -->
-
-    <div id="modal" class="hidden">
-        <div class="modal-content">
-            <span id="close">&times;</span>
-            <div id="modal-images">
-                <img src="photo/hellmann1.png" alt="Aintyourmayo">
-            </div>
-            <div id="modal-description">
-                Si Hellmann’s fait de la vraie mayonnaise, pourquoi continue-t-on de la qualifiée de « mayo » ?
-Avec la campagne Ain’t Your “Mayo” la marque abandonne son étiquette classique afin de faire un rappel sur sa véritable nature, gage d'excellence culinaire.
-Ceux qui ont osé parler sur X de la mayonnaise d'Hellmann’s en utilisant le terme "mayo" sont exposés sur un billboard à Times Square. Les internautes apparaissant dessus peuvent disparaître du billboard si ils s’excusent publiquement. Et pour chaque excuse, Hellmann’s enverra un pot « Apology Accepted » en édition limitée . Lorsque chaque personne affichée sur le billboard se sera excusée, l’étiquette d’origine reviendra en magasin. Dorénavant, tout le monde se souviendra qu'il faut appeler la Real Mayonnaise d'Hellmann's par son nom complet.
-Parce qu'Hellmann's ne fait pas de la simple "mayo". Il fait de la vraie mayonnaise.
-                <h2>Mon projet 2</h2>
-                <p>Description du projet 1...</p>
-            </div>
-            <div id="modal-videos">
-                <video src="video/hellmanncase.mp4" alt="hellmanncase"> </video>
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
-
+</body></html>

@@ -178,9 +178,9 @@ html{scrollbar-gutter:stable}
 
 /* apparition des projets sur l'accueil : fondu lent, léger glissement, puis le titre */
 :root{--soft:cubic-bezier(.45,.05,.25,1)}
-.js .work .media{clip-path:none;opacity:0;transform:translateY(56px);transition:opacity 2.6s var(--soft),transform 2.8s var(--out)}
+.js .work .media{clip-path:none;opacity:0;transform:translateY(56px);transition:opacity 1.6s var(--soft),transform 2.8s var(--out)}
 .js .work .media.in{opacity:1;transform:none}
-.work .media img{transform:scale(1.14);transition:transform 3.4s var(--out)}
+.work .media img{transform:scale(1.14);transition:transform 2.4s var(--out)}
 .work .media.in img{transform:none}
 .js .work .meta{opacity:0;transform:translateY(16px);transition:opacity 2s var(--soft) .7s,transform 2s var(--out) .7s}
 .js .work .media.in+.meta{opacity:1;transform:none}
